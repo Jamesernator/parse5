@@ -80,7 +80,7 @@ export interface TreeAdapter<T extends TreeAdapterTypeMap = TreeAdapterTypeMap> 
      * @param namespaceURI - Namespace of the element.
      * @param attrs - Attribute name-value pair array. Foreign attributes may contain `namespace` and `prefix` fields as well.
      */
-    createElement(tagName: string, namespaceURI: NS, attrs: Attribute[]): T['element'];
+    createElement(tagName: string, namespaceURI: NS, attrs: Attribute[], intendedParent: T['parentNode']): T['element'];
 
     /**
      * Removes a node from its parent.

@@ -465,7 +465,7 @@ export class Parser<T extends TreeAdapterTypeMap> implements TokenHandler, Stack
 
     /** @protected */
     _insertFakeRootElement(): void {
-        const element = this.treeAdapter.createElement(TN.HTML, NS.HTML, []);
+        const element = this.treeAdapter.createElement(TN.HTML, NS.HTML, [], this.document);
         if (this.options.sourceCodeLocationInfo) this.treeAdapter.setNodeSourceCodeLocation(element, null);
 
         this.treeAdapter.appendChild(this.openElements.current, element);
